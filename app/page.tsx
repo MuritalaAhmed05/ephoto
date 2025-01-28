@@ -304,7 +304,8 @@ const Dashboard = () => {
                   <img
                     src={imageUrl}
                     alt={selectedApi.name}
-                    className="rounded-lg  w-32 h-32 sm:w-40 sm:h-40 md:w-60 md:h-60 object-contain"
+                    // className="rounded-lg  w-32 h-32 sm:w-40 sm:h-40 md:w-60 md:h-60 object-contain"
+                    className="rounded-lg  w-1/2 h-1/2 object-contain"
                   />
                 </motion.div>
               )}
