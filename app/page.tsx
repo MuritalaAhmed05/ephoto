@@ -92,7 +92,7 @@ const Dashboard = () => {
   const [selectedApi, setSelectedApi] = useState(apis[0]);
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
-  const [imageUrl, setImageUrl] = useState(null);
+  const [imageUrl, setImageUrl] = useState<string | null>(null)
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(true);
