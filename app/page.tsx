@@ -618,6 +618,15 @@ const Dashboard = () => {
       setLoading(false);
     }
   };
+  const downloadImage = () => {
+  if (!imageUrl) return;
+  const link = document.createElement("a");
+  link.href = imageUrl;
+  link.download = "generated-image.png"; // Sets the filename
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
   return (
     <div className="flex min-h-screen bg-gradient-to-r from-blue-950 via-blue-800 to-blue-700">
     {!isNavOpen && (
@@ -815,15 +824,25 @@ const Dashboard = () => {
                   </motion.div>
                 )}
               {loading ? (
-  <Skeleton className="h-[400px] w-[300px] rounded-xl" />
+  <div  className="flex flex-col justify-center items-center w-full gap-3 ">
+    <Skeleton className="h-[350px] w-[300px] rounded-xl" />
+    <Skeleton className="py-3 px-4 h-[50px] w-[300px] rounded-xl" />
+  </div>
 ) : imageUrl ? (
   <motion.div
     initial={{ opacity: 0, scale: 0.95 }}
     animate={{ opacity: 1, scale: 1 }}
     exit={{ opacity: 0, scale: 0.95 }}
-    className="rounded-lg shadow-xl flex justify-center items-center overflow-hidden"
+    className="flex flex-col justify-center items-center w-full gap-3 "
   >
-    <img src={imageUrl} alt={selectedApi.name} className="rounded-lg h-[400px] w-[300px]" />
+  
+      <div className="rounded-lg shadow-xl flex justify-center items-center overflow-hidden"><img src={imageUrl} alt={selectedApi.name} className="rounded-lg h-[350px] w-[300px] object-contain" /></div>
+    
+        <button onClick={downloadImage}
+         className="w-[300px] bg-blue-500 text-white font-medium py-3 px-4 rounded-lg hover:bg-blue-400 transition-colors flex items-center justify-center"
+        >Download Image</button>
+    
+  
   </motion.div>
 ) : null}
 
