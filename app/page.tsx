@@ -836,7 +836,7 @@ const Dashboard = () => {
     className="flex flex-col justify-center items-center w-full gap-3 "
   >
   
-      <div className="rounded-lg shadow-xl flex justify-center items-center overflow-hidden"><img src={imageUrl} alt={selectedApi.name} className="rounded-lg h-[350px] w-[300px] object-contain" /></div>
+      <div className="rounded-lg shadow-xl flex justify-center items-center overflow-hidden"><img src={imageUrl} alt={selectedApi.name} className="rounded-xl h-[350px] w-[300px] object-contain" /></div>
     
         <button onClick={downloadImage}
          className="w-[300px] bg-blue-500 text-white font-medium py-3 px-4 rounded-lg hover:bg-blue-400 transition-colors flex items-center justify-center"
